@@ -11,6 +11,7 @@ workflows:
           echo "Setting up environment"
       - name: بناء APK
         script: |
+        chmod +x gradlew
           ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
