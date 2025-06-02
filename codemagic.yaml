@@ -1,0 +1,16 @@
+
+workflows:
+  android-build:
+    name: GCamLite Android Build
+    environment:
+      vars:
+        JAVA_VERSION: 17
+    scripts:
+      - name: إعداد JDK وGradle
+        script: |
+          echo "Setting up environment"
+      - name: بناء APK
+        script: |
+          ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/**/*.apk

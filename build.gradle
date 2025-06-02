@@ -1,0 +1,29 @@
+// Top-level build file
+// الصيغة القديمة المتوافقة مع Gradle 4.4.1
+
+buildscript {
+    ext.kotlin_version = '1.3.72' // تخفيض إصدار Kotlin للتوافق
+    repositories {
+        google()
+        jcenter() // jcenter مطلوب للإصدارات القديمة من AGP
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1' // تخفيض إصدار Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // ملاحظة: قد تحتاج لإضافة اعتماديات أخرى هنا إذا لزم الأمر
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        // يمكنك إضافة maven { url 'https://jitpack.io' } إذا كنت تستخدم مكتبات من JitPack
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
