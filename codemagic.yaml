@@ -1,4 +1,3 @@
-
 workflows:
   android-build:
     name: GCamLite Android Build
@@ -11,7 +10,8 @@ workflows:
           echo "Setting up environment"
       - name: بناء APK
         script: |
-        chmod +x gradlew
+          chmod +x gradlew
           ./gradlew assembleDebug
-    artifacts:
+    artifacts:  # <-- تأكد أن هذه المسافة البادئة مطابقة لـ scripts:
       - app/build/outputs/**/*.apk
+
